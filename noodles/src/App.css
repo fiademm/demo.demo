@@ -1,10 +1,185 @@
-
-
-
-/* .App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
 }
 
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+
+/* styles for button components */
+.filled-button {
+  box-shadow: none;
+  border-color: transparent;
+  font-family: "Semibold";
+  background-color: #1f4e79;
+  padding: 0.7vw 3vw;
+  border-radius: 0.16vw;
+  color: #fafafa;
+  font-size: 0.83vw;
+  width: 100%;
+}
+
+.filled-button-large {
+  box-shadow: none;
+  border-color: transparent;
+  font-family: "SemiBold";
+  background-color: #1f4e79;
+  padding: 0.7vw 3vw;
+  border-radius: 0.16vw;
+  color: #fafafa;
+  font-size: 0.83vw;
+  width: 100%;
+}
+
+.outlined-button {
+  background-color: transparent;
+  font-family: "SemiBold";
+  border-color: #1f4e79;
+  padding: 0.6vw 3vw;
+  border-radius: 0.16vw;
+  color: #1f4e79;
+  font-size: 0.83vw;
+  box-shadow: none;
+}
+
+.outlined-button-1 {
+  background-color: transparent;
+  font-family: "Medium";
+  border-color: #1f4e79;
+  padding: 0.6vw 3vw;
+  border-radius: 0.16vw;
+  color: #1f4e79;
+  font-size: 0.76vw;
+  box-shadow: none;
+}
+
+.link-button {
+  color: #1E49E2;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.auth-link-button {
+  font-family: "Bold";
+  padding: 3.2% 0;
+  background-color: #1E49E2;
+  color: #fafafa;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  border-radius: 2px;
+}
+
+.tabs-component-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 4%;
+}
+
+.tab-button {
+  background-color: transparent;
+  width: 100%;
+  padding: 0.6vw 0vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.2s;
+  font-family: "Jost-Medium";
+  font-size: 0.96vw;
+  border: none;
+  cursor: pointer;
+  border-bottom: 0.1vw solid #ccc;
+}
+
+.tab-button:hover,
+.active-tab-button:hover {
+  color: #1f4e79;
+}
+
+.tab-button:visited,
+.active-tab-button:visited {
+  color: #1f4e79;
+}
+
+.active-tab-button {
+  background-color: transparent;
+  width: 100%;
+  padding: 0.6vw 0vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.2s;
+  font-family: "Jost-Medium";
+  font-size: 0.96vw;
+  border: none;
+  cursor: pointer;
+  border-bottom: 0.18vw solid #172d42;
+}
+
+
+/* auth screens */
+.main-auth-container {
+  background-color: #fafafa;
+  padding: 5% 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  border-radius: 1.8%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.auth-screen-header {
+  font-size: calc(8px + 2vmin);
+  font-family: "Extrabold";
+}
+
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4vh;
+}
+
+.auth-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: .4vh;
+}
+
+.auth-text-input, .auth-password-input {
+  width: 28vw;
+  background-color: #fafafa;
+  font-size: calc(8px + .6vmin);
+  padding: 3.2%;
+  color: #505050;
+  box-shadow: none;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.auth-text-input {
+
+}
+
+.auth-password-input {
+
+}
+
+
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -20,6 +195,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;

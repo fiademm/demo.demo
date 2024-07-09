@@ -1,14 +1,17 @@
+import './App.css';
 import Login from './app/screens/Login';
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import Register from './app/screens/Register';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Login />}></Route>
-        <Route path='/register' element={<Register />}></Route>
-      </Routes>
+      <div className='App'>
+        <Routes>
+          <Route path='/' element={<Login />}></Route>
+          <Route path='/register' element={<Register />}></Route>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
