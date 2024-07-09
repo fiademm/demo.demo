@@ -1,9 +1,7 @@
-import {Button, TextField} from '@mui/material';
 import { AuthLinkButton, LinkButton } from '../components/buttons';
 
-const Login = () => {
-  
 
+const Login = () => {
   return (
     <div className="main-auth-container">
       <header className="auth-screen-header">Login</header>

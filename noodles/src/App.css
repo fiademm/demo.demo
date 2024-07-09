@@ -131,7 +131,7 @@
 /* auth screens */
 .main-auth-container {
   background-color: #fafafa;
-  padding: 5% 4%;
+  padding: 4% 4%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,21 +161,12 @@
 .auth-text-input, .auth-password-input {
   width: 28vw;
   background-color: #fafafa;
-  font-size: calc(8px + .6vmin);
   padding: 3.2%;
   color: #505050;
   box-shadow: none;
   border: 1px solid #bbb;
   border-radius: 2px;
   box-sizing: border-box;
-}
-
-.auth-text-input {
-
-}
-
-.auth-password-input {
-
 }
 
 
