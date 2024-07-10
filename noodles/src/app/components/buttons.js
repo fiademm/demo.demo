@@ -14,6 +14,7 @@ const OutlinedButton = (props) => {
     );
 }
 
+// used for login and register buttons
 const AuthLinkButton = (props) => {
     return(
       <Link to={props.buttonLink}>
@@ -22,6 +23,7 @@ const AuthLinkButton = (props) => {
     );
 }
 
+// used for login and register text links below auth forms
 const LinkButton = (props) => {
     return(
       <Link to={props.buttonLink}>

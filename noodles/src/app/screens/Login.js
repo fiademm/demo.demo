@@ -14,7 +14,7 @@ const Login = () => {
           <label>Password</label>
           <input className='auth-password-input' type='password'></input>
         </div>
-        <AuthLinkButton buttonText='Login' buttonLink='/register'></AuthLinkButton>
+        <AuthLinkButton buttonText='Login' buttonLink='/dashboard'></AuthLinkButton>
       </section>
       <span>Are you a new user? <LinkButton buttonText='Register here' buttonLink='/register' /></span>
     </div>

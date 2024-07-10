@@ -21,7 +21,7 @@ const Register = () => {
         <AuthLinkButton buttonText='Create account' buttonLink='/'></AuthLinkButton>
       </section>
       <span>Already have an account? <LinkButton buttonText='Login' buttonLink='/' /></span>
-      <BallTriangle height={16} width={16} radius={5} color="#4fa94d" ariaLabel="ball-triangle-loading" wrapperStyle={{}} wrapperClass="" visible={true} />
+      {/* <BallTriangle height={16} width={16} radius={5} color="#4fa94d" ariaLabel="ball-triangle-loading" wrapperStyle={{}} wrapperClass="" visible={true} /> */}
     </div>
     );
   }
