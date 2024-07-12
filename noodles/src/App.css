@@ -13,6 +13,11 @@
 }
 
 /* styles for logo on sidebar */
+.sidebar-logo {
+  height: 10vh;
+  width: 10vw;
+}
+
 .sidebar-logo-section {
   padding: 4vh 0;
   display: flex;
@@ -44,6 +49,14 @@
   width: 16vw;
 }
 
+.main-sidebar-container-mini {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  width: 6vw;
+}
+
 .sidebar-line-break {
   border: .01vh solid #bbb;
 }
@@ -55,6 +68,26 @@
   padding: 2vh 2vw;
   display: flex;
   flex-direction: row;
+}
+
+.sidebar-toggle {
+  text-decoration: none;
+  background-color: #eee;
+  color: #808080;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: row;
+  border: .1vh solid #808080;
+}
+
+.sidebar-toggle:hover {
+  text-decoration: none;
+  background-color: #e1e8ff;
+  color: #808080;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: row;
+  border: .1vh solid #808080;
 }
 
 .sidebar-link-container.active {

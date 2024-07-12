@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { AuthLinkButton, LinkButton } from "../components/buttons";
 import { Link } from "react-router-dom";
-import { Sidebar, MiniSidebar } from "../components/sidebars";
+import Sidebar from "../components/sidebars";
+
 
 const Dashboard = () => {
   return (

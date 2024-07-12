@@ -1,8 +1,50 @@
 import React, { useState } from "react";
-import { PiBellSimpleRinging, PiBellSimpleRingingLight, PiBriefcase, PiCalendarDots, PiCalendarDotsLight, PiGearSix, PiGearSixLight, PiListChecks, PiListChecksLight, PiNotepad, PiNotepadLight, PiSignOut, PiSignOutLight, PiSquaresFour, PiUserGear, PiUserGearLight } from "react-icons/pi";
+import {
+  PiArrowSquareOutDuotone,
+  PiBellSimpleRinging,
+  PiBriefcase,
+  PiCalendarDots,
+  PiGearSix,
+  PiGradient,
+  PiListChecks,
+  PiNotepad,
+  PiSignOut,
+  PiSquaresFour,
+  PiUserGear,
+} from "react-icons/pi";
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const [isSidebarMin, setIsSidebarMin] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarMin(!isSidebarMin);
+  };
+
+  return (
+    <section
+      className={
+        isSidebarMin ? "main-sidebar-container" : "main-sidebar-container-mini"
+      }
+    >
+      {isSidebarMin ? <DefaultSidebar /> : <MiniSidebar />}
+      {isSidebarMin ? (
+        <button className="sidebar-toggle" onClick={toggleSidebar}>
+          <span className="sidebar-link-component">
+            <PiArrowSquareOutDuotone size={20} />
+            Toggle sidebar
+          </span>
+        </button>
+      ) : (
+        <button className="sidebar-toggle" onClick={toggleSidebar}>
+          <PiArrowSquareOutDuotone size={20} />
+        </button>
+      )}
+    </section>
+  );
+};
+
+const DefaultSidebar = () => {
   const location = useLocation();
   const activeScreen = location.pathname.split("/")[1];
 
@@ -94,7 +136,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <section className="main-sidebar-container">
+    <>
       <div className="sidebar-expanded-logo">Noodles Insider</div>
       <hr className="sidebar-line-break" />
       {buttonData.map((button) => (
@@ -111,7 +153,7 @@ const Sidebar = () => {
           </span>
         </Link>
       ))}
-    </section>
+    </>
   );
 };
 
@@ -207,8 +249,10 @@ const MiniSidebar = () => {
   ];
 
   return (
-    <section className="main-sidebar-container">
-      <div className="sidebar-expanded-logo">NoodlIn</div>
+    <>
+      <div className="sidebar-expanded-logo">
+        <PiGradient size={30} />
+      </div>
       <hr className="sidebar-line-break" />
       {buttonData.map((button) => (
         <Link
@@ -223,8 +267,8 @@ const MiniSidebar = () => {
           </span>
         </Link>
       ))}
-    </section>
+    </>
   );
 };
 
-export { Sidebar, MiniSidebar };
+export default Sidebar;

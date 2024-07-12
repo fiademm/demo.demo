@@ -1,5 +1,5 @@
 import { AuthLinkButton, LinkButton } from '../components/buttons';
-import { Sidebar, MiniSidebar } from "../components/sidebars";
+import Sidebar from "../components/sidebars";
 
 const Resources = () => {
   return (
