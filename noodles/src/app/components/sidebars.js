@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import {
-  BsGridFill,
-  BsFillPeopleFill,
-  BsAward,
-  BsBook,
-  BsCollectionPlay,
-} from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { PiBellSimpleRinging, PiBellSimpleRingingLight, PiBriefcase, PiCalendarDots, PiCalendarDotsLight, PiGearSix, PiGearSixLight, PiListChecks, PiListChecksLight, PiNotepad, PiNotepadLight, PiSignOut, PiSignOutLight, PiSquaresFour, PiUserGear, PiUserGearLight } from "react-icons/pi";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
-  const [activeButton, setActiveButton] = useState("Dashboard");
+  const location = useLocation();
+  const activeScreen = location.pathname.split("/")[1];
 
   const handleLogout = () => {
     localStorage.removeItem("userId");
@@ -18,89 +13,100 @@ const Sidebar = () => {
   const buttonData = [
     {
       id: 1,
-      icon: BsGridFill,
+      icon: PiSquaresFour,
       title: "Dashboard",
-      link: "/a-dashboard",
+      className: "sidebar-link-container",
+      link: "/dashboard",
       onButtonClick: "",
+      isActive: activeScreen === "dashboard",
     },
     {
       id: 2,
-      icon: BsFillPeopleFill,
+      icon: PiBriefcase,
       title: "Engagements",
-      link: "/a-administrators",
+      className: "sidebar-link-container",
+      link: "/engagements",
       onButtonClick: "",
+      isActive: activeScreen === "engagements",
     },
     {
       id: 3,
-      icon: BsAward,
+      icon: PiNotepad,
       title: "Reports",
-      link: "/a-badges",
+      className: "sidebar-link-container",
+      link: "/reports",
       onButtonClick: "",
+      isActive: activeScreen === "reports",
     },
     {
       id: 4,
-      icon: BsBook,
+      icon: PiUserGear,
       title: "Resources",
-      link: "/a-courses",
+      className: "sidebar-link-container",
+      link: "/resources",
       onButtonClick: "",
+      isActive: activeScreen === "resources",
     },
     {
       id: 5,
-      icon: BsCollectionPlay,
+      icon: PiCalendarDots,
       title: "Schedule",
-      link: "/a-course-videos",
+      className: "sidebar-link-container",
+      link: "/schedule",
       onButtonClick: "",
+      isActive: activeScreen === "schedule",
     },
     {
       id: 6,
-      icon: BsCollectionPlay,
+      icon: PiListChecks,
       title: "Tasks",
-      link: "/a-course-videos",
+      className: "sidebar-link-container",
+      link: "/tasks",
       onButtonClick: "",
+      isActive: activeScreen === "tasks",
     },
     {
       id: 7,
-      icon: BsCollectionPlay,
+      icon: PiBellSimpleRinging,
       title: "Notifications",
-      link: "/a-course-videos",
+      className: "sidebar-link-container",
+      link: "/notifications",
       onButtonClick: "",
+      isActive: activeScreen === "notifications",
     },
     {
       id: 8,
-      icon: BsCollectionPlay,
+      icon: PiGearSix,
       title: "Settings",
-      link: "/a-course-videos",
+      className: "sidebar-link-container",
+      link: "/settings",
       onButtonClick: "",
+      isActive: activeScreen === "settings",
     },
     {
       id: 9,
-      icon: BsCollectionPlay,
+      icon: PiSignOut,
       title: "Logout",
+      className: "sidebar-link-container",
       link: "/",
       onButtonClick: handleLogout,
     },
   ];
 
-  const handleClick = (button) => {
-    setActiveButton(button);
-  };
-
   return (
     <section className="main-sidebar-container">
+      <div className="sidebar-expanded-logo">Noodles Insider</div>
+      <hr className="sidebar-line-break" />
       {buttonData.map((button) => (
         <Link
           to={button.link}
-          onClick={button.onButtonClick}
           key={button.id}
-          style={{ textDecoration: "none", backgroundColor: "transparent" }}
+          className={`sidebar-link-container ${
+            button.isActive ? "active" : ""
+          }`}
         >
-          <span
-            className={`sidebar-button ${
-              activeButton === button.title ? "active-sidebar-button" : ""
-            }`}
-            onClick={() => handleClick(button.title)}
-          >
-            <button.icon style={{ backgroundColor: "transparent" }} />
+          <span className="sidebar-link-component">
+            <button.icon size={20} />
             {button.title}
           </span>
         </Link>
@@ -109,4 +115,116 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+const MiniSidebar = () => {
+  const location = useLocation();
+  const activeScreen = location.pathname.split("/")[1];
+
+  const handleLogout = () => {
+    localStorage.removeItem("userId");
+  };
+
+  const buttonData = [
+    {
+      id: 1,
+      icon: PiSquaresFour,
+      title: "Dashboard",
+      className: "sidebar-link-container",
+      link: "/dashboard",
+      onButtonClick: "",
+      isActive: activeScreen === "dashboard",
+    },
+    {
+      id: 2,
+      icon: PiBriefcase,
+      title: "Engagements",
+      className: "sidebar-link-container",
+      link: "/engagements",
+      onButtonClick: "",
+      isActive: activeScreen === "engagements",
+    },
+    {
+      id: 3,
+      icon: PiNotepad,
+      title: "Reports",
+      className: "sidebar-link-container",
+      link: "/reports",
+      onButtonClick: "",
+      isActive: activeScreen === "reports",
+    },
+    {
+      id: 4,
+      icon: PiUserGear,
+      title: "Resources",
+      className: "sidebar-link-container",
+      link: "/resources",
+      onButtonClick: "",
+      isActive: activeScreen === "resources",
+    },
+    {
+      id: 5,
+      icon: PiCalendarDots,
+      title: "Schedule",
+      className: "sidebar-link-container",
+      link: "/schedule",
+      onButtonClick: "",
+      isActive: activeScreen === "schedule",
+    },
+    {
+      id: 6,
+      icon: PiListChecks,
+      title: "Tasks",
+      className: "sidebar-link-container",
+      link: "/tasks",
+      onButtonClick: "",
+      isActive: activeScreen === "tasks",
+    },
+    {
+      id: 7,
+      icon: PiBellSimpleRinging,
+      title: "Notifications",
+      className: "sidebar-link-container",
+      link: "/notifications",
+      onButtonClick: "",
+      isActive: activeScreen === "notifications",
+    },
+    {
+      id: 8,
+      icon: PiGearSix,
+      title: "Settings",
+      className: "sidebar-link-container",
+      link: "/settings",
+      onButtonClick: "",
+      isActive: activeScreen === "settings",
+    },
+    {
+      id: 9,
+      icon: PiSignOut,
+      title: "Logout",
+      className: "sidebar-link-container",
+      link: "/",
+      onButtonClick: handleLogout,
+    },
+  ];
+
+  return (
+    <section className="main-sidebar-container">
+      <div className="sidebar-expanded-logo">NoodlIn</div>
+      <hr className="sidebar-line-break" />
+      {buttonData.map((button) => (
+        <Link
+          to={button.link}
+          key={button.id}
+          className={`sidebar-link-container ${
+            button.isActive ? "active" : ""
+          }`}
+        >
+          <span className="sidebar-link-component">
+            <button.icon size={20} />
+          </span>
+        </Link>
+      ))}
+    </section>
+  );
+};
+
+export { Sidebar, MiniSidebar };

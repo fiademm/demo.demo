@@ -1,5 +1,5 @@
 import { AuthLinkButton, LinkButton } from '../components/buttons';
-import Sidebar from '../components/sidebars';
+import { Sidebar, MiniSidebar } from "../components/sidebars";
 
 const Reports = () => {
   return (

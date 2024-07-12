@@ -23,13 +23,67 @@
   font-size: calc(8px + 2.4vmin);
 }
 
+.sidebar-expanded-logo {
+  padding: 4vh 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Extrabold';
+  font-size: calc(8px + 2.4vmin);
+  background-color: transparent;
+  color: #505050;
+}
+
 /* styles for sidebar component */
 .main-sidebar-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f0f0f0;
+  background-color: #fafafa;
   width: 16vw;
+}
+
+.sidebar-line-break {
+  border: .01vh solid #bbb;
+}
+
+.sidebar-link-container {
+  text-decoration: none;
+  background-color: transparent;
+  color: #808080;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar-link-container.active {
+  text-decoration: none;
+  background-color: transparent;
+  color: #808080;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: row;
+  border-bottom: .1vw solid #1E49E2;
+  border-left: .4vw solid #1E49E2;
+  box-sizing: border-box;
+}
+
+.sidebar-link-container:hover, .sidebar-link-container:active {
+  border-bottom: .1vw solid #1E49E2;
+  border-left: .4vw solid #1E49E2;
+}
+
+.sidebar-link-container-selected {
+  background-color: red;
+}
+
+.sidebar-link-component {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2vw;
+  align-items: center;
+  font-size: calc(8px + 1vmin);
 }
 
 
@@ -209,7 +263,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  background-color: pink;
+  background-color: #f0f0f0;
 }
 
 .sidebar-container {
