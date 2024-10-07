@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Darker Grotesque";
+}
+
+body {
+  margin: 0;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Darker Grotesque";
+}
+
+input {
+  all: unset;
+}
+
+select {
+  all: unset;
+}
+
+/* screen specific styles */
+/* mobile styles */
+@media (max-width: 575px) {
+
+}
+/* tablet styles */
+@media (min-width: 576px) and (max-width: 991.9px) {
+
+}
+/* laptop styles */
+@media (min-width: 991.9px) and (max-width: 1279.9px) {
+    
+}
+/* desktop styles */
+@media (min-width: 1280px) {
+    body {
+      font-size: 0.9vw;
+    }
+}

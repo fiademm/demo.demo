@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+import { useUser } from '../utils/UserContext';
+import withResponsiveLayout from '../utils/withResponsiveLayout';
+import Sidebar from '../components/Sidebar';
+
+const Home = ({ screenSize }) => {
+    const { user } = useUser(); //this code accesses the user details from the UserContext component
+
+    const [employeeInfo, setEmployeeInfo] = useState([]);
+
+    return(
+        <div className='screen-container'>
+            {screenSize === "mobile" && <div>Mobile screen</div>}
+            {screenSize === "tablet" && <div>Tablet screen</div>}
+            {screenSize === "laptop" && <div>Laptop screen</div>}
+            {screenSize === "desktop" && (
+                <>
+                <Sidebar />
+                <section className='main-content-container-1 '>
+                    <nav></nav>
+                    <div>{}</div>
+                    <div className="main-content-nav-container"></div>
+                    <div className="main-content-container-2"></div>
+                </section>
+                </>
+            )}
+        </div>
+    );
+};
+
+export default withResponsiveLayout(Home);
