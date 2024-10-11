@@ -1,0 +1,22 @@
+/* various button styles */
+.btn-primary-raw-auth {}
+.btn-primary-raw-table {}
+.btn-primary-raw-modal {}
+.btn-outlined-raw-auth {}
+.btn-outlined-raw-table {}
+.btn-outlined-raw-modal {}
+.btn-primary-icon-auth {}
+.btn-primary-icon-table {}
+.btn-primary-icon-modal {}
+.btn-outlined-icon-auth {}
+.btn-outlined-icon-table {}
+.btn-outlined-icon-modal {}
+
+.btn-primary-raw-auth.hover, .btn-primary-raw-table.hover, .btn-primary-raw-modal.hover {}
+.btn-outlined-raw-auth.hover, .btn-outlined-raw-table.hover, .btn-outlined-raw-modal.hover {}
+
+.btn-primary-raw-auth.focused, .btn-primary-raw-table.focused, .btn-primary-raw-modal.focused {}
+.btn-outlined-raw-auth.focused, .btn-outlined-raw-table.focused, .btn-outlined-raw-modal.focused {}
+
+.btn-primary-raw-auth.disabled, .btn-primary-raw-table.disabled, .btn-primary-raw-modal.disabled {}
+.btn-outlined-raw-auth.disabled, .btn-outlined-raw-table.disabled, .btn-outlined-raw-modal.disabled {}

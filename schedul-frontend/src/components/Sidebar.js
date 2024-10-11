@@ -14,7 +14,8 @@ import {
 } from "react-icons/pi";
 import { Link, useLocation } from "react-router-dom";
 import withResponsiveLayout from "../utils/withResponsiveLayout";
-import Logo from "../Logo schedul.svg";
+import MiniLogo from "../assets/logosvg.svg";
+import "../styles/sidebar.css";
 
 const Sidebar = ({}) => {
   const [isSidebarMin, setIsSidebarMin] = useState(false);
@@ -113,37 +114,20 @@ const Sidebar = ({}) => {
     },
     {
       id: 10,
-      icon: PiHouseLight,
-      title: "Home",
+      icon: PiSquareHalfLight,
+      title: "Toggle",
       className: "sidebar-link-container",
       link: "/",
-      onButtonClick: handleLogout,
-      isActive: activeScreen === "Home",
+      onButtonClick: toggleSidebar,
     },
   ];
 
   return (
-    <section
-      className={
-        isSidebarMin ? "main-sidebar-container" : "main-sidebar-container-mini"
-      }
-    >
+    <section className={isSidebarMin ? "sidebar" : "sidebar mini"}>
       {isSidebarMin ? (
         <DefaultSidebar buttonData={sidebarButtonData} />
       ) : (
         <MiniSidebar buttonData={sidebarButtonData} />
-      )}
-      {isSidebarMin ? (
-        <button className="sidebar-toggle" onClick={toggleSidebar}>
-          <span className="sidebar-link-component">
-            <PiSquareHalfLight size={22} />
-            Toggle sidebar
-          </span>
-        </button>
-      ) : (
-        <button className="sidebar-toggle" onClick={toggleSidebar}>
-          <PiSquareHalfLight size={22} />
-        </button>
       )}
     </section>
   );
@@ -152,20 +136,21 @@ const Sidebar = ({}) => {
 const DefaultSidebar = ({ buttonData }) => {
   return (
     <>
-      <div className="sidebar-logo">
+      <div className="logo-container">
         <img src={MiniLogo} className="logo" alt="" />
       </div>
-      <hr className="sidebar-line-break" />
+      <hr className="sidebar-divider" />
       {buttonData.map((button) => (
         <Link
           to={button.link}
           key={button.id}
-          className={`sidebar-link-container-expanded ${
+          className={`sidebar-menu-container ${
             button.isActive ? "active" : ""
           }`}
-        >
-          <span className="sidebar-link-component">
-            <button.icon size={22} />
+          onClick={button.onButtonClick}
+          >
+          <span className="sidebar-menu">
+            <button.icon className='sidebar-menu-icon' />
             {button.title}
           </span>
         </Link>
@@ -175,22 +160,23 @@ const DefaultSidebar = ({ buttonData }) => {
 };
 
 const MiniSidebar = ({ buttonData }) => {
-  return (
-    <>
-      <div className="sidebar-logo">
-        <img src={MiniLogo} className="logo" alt="" />
-      </div>
-      <hr className="sidebar-line-break" />
+    return (
+        <>
+    <div className="logo-container">
+      <img src={MiniLogo} className="logo" alt="" />
+    </div>
+      <hr className="sidebar-divider" />
       {buttonData.map((button) => (
-        <Link
+          <Link
           to={button.link}
           key={button.id}
-          className={`sidebar-link-container ${
-            button.isActive ? "active" : ""
-          }`}
-        >
-          <span className="sidebar-link-component">
-            <button.icon size={22} />
+          className={`sidebar-menu-container ${
+              button.isActive ? "active" : ""
+            }`}
+            onClick={button.onButtonClick}
+            >
+          <span className="sidebar-menu mini">
+            <button.icon className='sidebar-menu-icon' />
           </span>
         </Link>
       ))}
